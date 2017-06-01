@@ -5,4 +5,4 @@ for file in *; do mv "$file" ${file// /_}; done
 4.build/dev-server.js 使用express框架mock服务端数据
 var appData = require('/json文件的路径')
 var seller = appData.seller;//通过json格式，自动会解析数据返回
-5.6-3
+5.6-3 
