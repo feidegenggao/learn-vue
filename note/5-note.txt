@@ -1,0 +1,8 @@
+1.修改webpack的配置后，需要重启npm run dev
+2.css设定的优先级？
+3.文件名中的空格替换为下划线的shell命令：
+for file in *; do mv "$file" ${file// /_}; done
+4.build/dev-server.js 使用express框架mock服务端数据
+var appData = require('/json文件的路径')
+var seller = appData.seller;//通过json格式，自动会解析数据返回
+5.6-3
