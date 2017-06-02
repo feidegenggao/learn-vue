@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <h1>This is in App.vue</h1>
+    <v-header v-bind:seller="seller"></v-header><!--绑定seller对象-->
+
     <div class="link">
       <router-link to="/goods">商品</router-link>
       <router-link to="/rating">评价</router-link>
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import header from '@/components/header/Header'
 const ERR_OK = 0;
 export default {
   data() {
@@ -25,14 +27,17 @@ export default {
       let data = response.body;
       // console.log(data)
       if(data.errno === ERR_OK){
-        this.seller = data.data;
+        this.seller = data.data;//赋值给seller对象
         console.log(this.seller)
       }
     }, response => {
       console.log("response:" + response)
     })
   },
-  name: 'app'
+  name: 'app',
+  components: {//需要注册后使用
+    'v-header' : header
+  }
 }
 </script>
 

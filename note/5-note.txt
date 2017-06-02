@@ -6,3 +6,10 @@ for file in *; do mv "$file" ${file// /_}; done
 var appData = require('/json文件的路径')
 var seller = appData.seller;//通过json格式，自动会解析数据返回
 5.6-3 
+6.span标签？//span指定宽高是不生效的，全靠内容撑起来。
+设置为inline-block，就可以设置宽高了。
+
+7.同一行，用display：inline-block
+8.vertical-align：top属性，设置垂直对齐方式，可以把行内元素垂直对齐
+9.webpack有时候会把图片base64编码打包到代码中
+6-5--》11:35秒
