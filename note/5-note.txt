@@ -13,3 +13,7 @@ var seller = appData.seller;//通过json格式，自动会解析数据返回
 8.vertical-align：top属性，设置垂直对齐方式，可以把行内元素垂直对齐
 9.webpack有时候会把图片base64编码打包到代码中
 6-5--》11:35秒
+
+10.部分icon和text没有对齐。header的背景图片，变形了？
+
+6-》9小节
