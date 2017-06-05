@@ -48,11 +48,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
 }
 
 .link .router-link-active {
-  color: rgb(240, 20, 20); 
+  color: rgb(240, 20, 20);
 }
 
 .link{
