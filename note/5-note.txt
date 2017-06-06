@@ -43,3 +43,7 @@ inline-block,在指定宽度的基础上，可以指定高度了。
 
 15.展示评分的星星
 写一个star组件
+v-for指令，
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, consider switchin
+g to a TrueType font such as Consolas!
