@@ -36,8 +36,12 @@
     <div v-show="detailShow" class="detail">
       <div class="detail-main">
         <p>{{seller.bulletin}}</p>
+        <p>{{seller.bulletin}}</p>
+        <p>{{seller.bulletin}}</p>
+        <star :size="48" :score="seller.score"></star>
       </div>
-      <div class="detail-close">
+
+      <div class="detail-close" @click="closeDetail">
         <i>×</i>
       </div>
     </div>
@@ -45,6 +49,8 @@
 </template>
 
 <script>
+  import star from '@/components/star/star';
+
   export default {
     name: 'header',
     data() {
@@ -56,6 +62,9 @@
     methods: {//存放该组件需要的方法
       showDetail(){
         this.detailShow = true;
+      },
+      closeDetail(){
+        this.detailShow = false;
       }
     },
     props: {
@@ -66,6 +75,9 @@
     created() {
       //下标和字符串对应出来
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
+    },
+    components: {//注册star组件
+      star
     }
   }
 </script>
@@ -128,7 +140,7 @@
             margin-left: 6px;
             font-size: 16px;
             line-height: 18px; //行间距
-            font-weight: bold;//加粗
+            font-weight: bold;
         .description
           margin-bottom: 10px;
           font-size: 12px;
@@ -193,18 +205,21 @@
     .detail
       position: fixed;
       background-color: rgba(7, 17, 27, 0.8);
-      blur: 10px;
       z-index: 100;
-      width: 100%;
-      height: 100%;
+      min-height: 100vh;
+      overflow: scroll;
+      bottom: 0; //为啥，这个地方就可以滚动了？
+      display: flex;
+      flex-flow: column;
       top: 0;
       .detail-main
-        margin-top : 64px;
-        min-height :100%;
-        padding-bottom :64px;
+        margin-top: 64px;
+        flex: 1;
       .detail-close
-        margin : -64px auto 0 auto;
-        color :red;
+        color: red;
+        font-size: 42px;
+        height: 64px;
+        text-align: center;
 
   .header
     position: relative;
