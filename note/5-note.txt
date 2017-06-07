@@ -1,5 +1,14 @@
 ﻿1.修改webpack的配置后，需要重启npm run dev
 2.css设定的优先级？
+	CSS的设定的优先级，是有详细的设定就用详细的设定。
+	css的设置有这种：class = "a b c"如果有定义
+	.a.b.c {
+		各种css设定
+	}
+	这是最匹配的，其中.a.b.c的顺序没有影响
+	.a .b {
+		这种的意思是.a嵌套的.b的布局
+	}
 3.文件名中的空格替换为下划线的shell命令：
 for file in *; do mv "$file" ${file// /_}; done
 4.build/dev-server.js 使用express框架mock服务端数据
@@ -47,3 +56,16 @@ v-for指令，
 
 Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, consider switchin
 g to a TrueType font such as Consolas!
+
+16.h1标题的margin从哪来的？
+h1下面的margin会和后面元素的margin重合吗？
+
+17.两边的线，中间文字。文字居中，
+flex布局，自适应的方案
+参考：阮一峰的flex布局教程http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
+
+vue-loader会使用postcss，自定添加兼容性的css代码。
+caniuse.com官网有一个兼容css的工具
+
+18.font-weight 和font-size
+

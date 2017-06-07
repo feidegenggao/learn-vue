@@ -35,10 +35,15 @@
     </div>
     <div v-show="detailShow" class="detail">
       <div class="detail-main">
-        <p>{{seller.bulletin}}</p>
-        <p>{{seller.bulletin}}</p>
-        <p>{{seller.bulletin}}</p>
-        <star :size="48" :score="seller.score"></star>
+        <h1>{{seller.name}}</h1>
+        <star :size="48" :score="2.6" class="detail-star"></star>
+
+        <div class="title">
+          <div class="line"></div>
+          <div class="text">优惠信息</div>
+          <div class="line"></div>
+        </div>
+
       </div>
 
       <div class="detail-close" @click="closeDetail">
@@ -85,10 +90,6 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/mixin"; //这个地方引用代码不能使用alias，@这种符号进行简写。只能用这种相对路径来写
-
-  h1, h2 {
-    font-weight: normal;
-  }
 
   a {
     color: #42b983;
@@ -212,9 +213,28 @@
       display: flex;
       flex-flow: column;
       top: 0;
+      width 100%
+      text-align center
       .detail-main
         margin-top: 64px;
         flex: 1;
+        .detail-star
+          margin-top: 18px;
+          padding: 2px;
+        .title
+          display: flex;
+          width: 80%;
+          margin: 28px auto 24px
+          .line
+            flex: 1
+            position: relative;
+            top: -6px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+          .text
+            padding: 0 12px
+            font-size: 14px;
+            font-weight: 700;
+
       .detail-close
         color: red;
         font-size: 42px;

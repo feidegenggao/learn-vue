@@ -47,11 +47,13 @@
   @import "../../common/stylus/mixin.styl"
 
   .star
-    .start-item
+    text-align center
+    .star-item
       display: inline-block
       background-repeat no-repeat
-    &.star-48
-      .start-item
+
+  .star.star-48
+      .star-item
         width: 20px
         height: 20px
         margin-right: 22px;
