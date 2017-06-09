@@ -44,6 +44,12 @@
           <div class="line"></div>
         </div>
 
+        <ul v-if="seller.supports" class="supports">
+          <li v-for="item in seller.supports" class="item">
+            <span class="icon" v-bind:class="classMap[item.type]"></span>
+            <span class="text">{{item.description}}</span>
+          </li>
+        </ul>
       </div>
 
       <div class="detail-close" @click="closeDetail">
@@ -234,6 +240,34 @@
             padding: 0 12px
             font-size: 14px;
             font-weight: 700;
+        .supports
+          text-align left
+          width 80%
+          margin:0 auto //水平居中
+          .item
+            padding:0 12px
+            margin-bottom 12px
+            font-size 0
+            .icon
+              width 36px;
+              height 36px;//这个地方是要展示的图片的区块的大小，如果该区域比background-size大，那么，默认会repeat。指定no-repeat，那么就会值展示一个
+              background-size 16px//这个地方指定的是图片最小的大小
+              background-repeat no-repeat
+              display inline-block
+              &.decrease
+                bg-image('decrease_2')
+              &.discount
+                bg-image('discount_2')
+              &.special
+                bg-image('special_2')
+              &.invoice
+                bg-image('invoice_2')
+              &.guarantee
+                bg-image('guarantee_2')
+            .text
+              color: red
+              font-size 16px
+              line-height 16px
 
       .detail-close
         color: red;

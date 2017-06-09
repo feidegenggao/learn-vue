@@ -68,4 +68,4 @@ vue-loader会使用postcss，自定添加兼容性的css代码。
 caniuse.com官网有一个兼容css的工具
 
 18.font-weight 和font-size
-
+6-15小节 11分钟
