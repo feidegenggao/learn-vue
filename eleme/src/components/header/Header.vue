@@ -52,6 +52,8 @@
         </ul>
       </div>
 
+      <lineHeader biaoti="商家信息"></lineHeader>
+
       <div class="detail-close" @click="closeDetail">
         <i>×</i>
       </div>
@@ -61,6 +63,7 @@
 
 <script>
   import star from '@/components/star/star';
+  import lineHeader from '@/components/line-header/line-header';
 
   export default {
     name: 'header',
@@ -88,7 +91,8 @@
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
     },
     components: {//注册star组件
-      star
+      star,
+      lineHeader
     }
   }
 </script>
@@ -249,9 +253,9 @@
             margin-bottom 12px
             font-size 0
             .icon
-              width 36px;
-              height 36px;//这个地方是要展示的图片的区块的大小，如果该区域比background-size大，那么，默认会repeat。指定no-repeat，那么就会值展示一个
-              background-size 16px//这个地方指定的是图片最小的大小
+              width 32px;
+              height 32px;//这个地方是要展示的图片的区块的大小，如果该区域比background-size大，那么，默认会repeat。指定no-repeat，那么就会值展示一个
+              background-size 32px//这个地方指定的是图片最小的大小
               background-repeat no-repeat
               display inline-block
               &.decrease
@@ -265,9 +269,11 @@
               &.guarantee
                 bg-image('guarantee_2')
             .text
-              color: red
+              color: white
               font-size 16px
               line-height 16px
+              margin-left 6px
+              vertical-align 8px
 
       .detail-close
         color: red;
