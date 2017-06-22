@@ -26,14 +26,16 @@ export default {
 .title
     display flex
     width 80%
-    margin 28px auto 24px auto
-    text-align center
+    margin 28px auto 24px
     .line
-        flex 1
-        border-bottom 1px solid rgba(255, 255, 255, 0.2)
+      position: relative
+      top: -6px
+      flex 1
+      border-bottom 1px solid rgba(255, 255, 255, 0.2)
     .text
-        font-size 14px
-        font-weight 700
-        color rgb(255, 255, 255)
-        line-height 14px
+      padding 0 12px
+      font-size 14px
+      font-weight 700
+      color rgb(255, 255, 255)
+      line-height 14px
 </style>

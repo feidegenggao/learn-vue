@@ -33,16 +33,12 @@
     <div class="header-background">
       <img :src="seller.avatar">
     </div>
-    <div v-show="detailShow" class="detail">
+    <div v-show="detailShow" class="detail" transition="fade">
       <div class="detail-main">
         <h1>{{seller.name}}</h1>
         <star :size="48" :score="2.6" class="detail-star"></star>
 
-        <div class="title">
-          <div class="line"></div>
-          <div class="text">优惠信息</div>
-          <div class="line"></div>
-        </div>
+        <lineHeader biaoti="优惠信息"></lineHeader>
 
         <ul v-if="seller.supports" class="supports">
           <li v-for="item in seller.supports" class="item">
@@ -50,9 +46,16 @@
             <span class="text">{{item.description}}</span>
           </li>
         </ul>
+        <lineHeader biaoti="商家信息"></lineHeader>
+
+        <div class="bulletin">
+          <p class="content">
+            {{seller.bulletin}}
+          </p>
+        </div>
       </div>
 
-      <lineHeader biaoti="商家信息"></lineHeader>
+
 
       <div class="detail-close" @click="closeDetail">
         <i>×</i>
@@ -215,7 +218,6 @@
         font-weight: 200;
     .detail
       position: fixed;
-      background-color: rgba(7, 17, 27, 0.8);
       z-index: 100;
       min-height: 100vh;
       overflow: scroll;
@@ -225,25 +227,19 @@
       top: 0;
       width 100%
       text-align center
-      .detail-main
+      transition: all 0.5s
+      &.fade-transition
+        opacity: 1
+        background-color: rgba(7, 17, 27, 0.8);
+      &.fade-enter, &.fade-leave
+        opacity: 1
+        background-color: rgba(7, 17, 27, 0.8);
+  .detail-main
         margin-top: 64px;
         flex: 1;
         .detail-star
           margin-top: 18px;
           padding: 2px;
-        .title
-          display: flex;
-          width: 80%;
-          margin: 28px auto 24px
-          .line
-            flex: 1
-            position: relative;
-            top: -6px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-          .text
-            padding: 0 12px
-            font-size: 14px;
-            font-weight: 700;
         .supports
           text-align left
           width 80%
@@ -274,7 +270,14 @@
               line-height 16px
               margin-left 6px
               vertical-align 8px
-
+        .bulletin
+          width 80%
+          margin:0 auto //水平居中
+          .content
+            padding 0 12px
+            line-height 24px
+            font-size 12px
+            text-align left
       .detail-close
         color: red;
         font-size: 42px;
