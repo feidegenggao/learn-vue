@@ -33,7 +33,8 @@
     <div class="header-background">
       <img :src="seller.avatar">
     </div>
-    <div v-show="detailShow" class="detail" transition="fade">
+    <transition name="fade">
+    <div v-show="detailShow" class="detail" @click="closeDetail">
       <div class="detail-main">
         <h1>{{seller.name}}</h1>
         <star :size="48" :score="2.6" class="detail-star"></star>
@@ -54,13 +55,11 @@
           </p>
         </div>
       </div>
-
-
-
       <div class="detail-close" @click="closeDetail">
         <i>×</i>
       </div>
     </div>
+    </transition>
   </div>
 </template>
 
@@ -228,12 +227,11 @@
       width 100%
       text-align center
       transition: all 0.5s
-      &.fade-transition
-        opacity: 1
-        background-color: rgba(7, 17, 27, 0.8);
-      &.fade-enter, &.fade-leave
-        opacity: 1
-        background-color: rgba(7, 17, 27, 0.8);
+      background-color: rgba(7, 17, 27, 0.8)
+    .fade-enter-active, .fade-leave-active
+      transition: opacity .5s
+    .fade-enter, .fade-leave-to
+      opacity: 0
   .detail-main
         margin-top: 64px;
         flex: 1;

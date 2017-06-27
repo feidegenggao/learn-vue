@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import VueResource from 'vue-resource'
 import Hello from '@/components/Hello'
-import Goods from '@/components/Goods'
+import Goods from '@/components/goods/goods'
 import Rating from '@/components/Rating'
 import Seller from '@/components/Seller'
 
