@@ -1,0 +1,47 @@
+﻿<html>
+	<head>
+	    <title>测试混合框架</title>
+		<style >
+			input[type="button"]{
+				font-size:20;
+				height:50px;
+				width:220px;
+				margin-top:10px;
+				margin-left:30px
+			}
+		</style>
+	</head>
+	<body >	
+	
+	<input type="button" onclick="showToast()" value="测试Toast"/>
+	<input type="button" onclick="test()" value="测试自定义的bridge"/>
+	   <br/>	<br/>	<br/>	<br/>
+	   
+	<input type="button" onclick="downloadFile()" value="下载文件url"/>
+
+	   
+   	<input type="button" onclick="openFile()" value="打开文件url"/>
+   	
+	   
+	<input type="button" onclick="fileStatus()" value="获取文件状态url"/>
+	   <br/>	<br/>	<br/>	<br/>
+	   
+	<script type="text/javascript">
+	
+	function showToast(){
+		nativePlugin.showToast(a);
+		
+		BaseToolsBridgeNative.showToast("hehe");
+	}
+	
+	function a(message){
+		alert("from android java :" + message);
+	}
+	
+	function test(){
+		NewPlugin.location("arg from js", "a");
+	}
+
+    </script>
+		</body>
+</html>

@@ -1,0 +1,1 @@
+miniweb.exe -p 8392 -r ./
